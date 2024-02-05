@@ -29,6 +29,10 @@ Simple web server in Ruby to demonstrate Playwright testing capabilities.
 - start webserver with `docker-compose up web`.
 - start playwright automated script with `docker compose run playwright npx playwright test`.
 - Test results will be available in `playwright-report/index.html`. Open it with web browser.
+  ```shell
+  # Example: How to open simple HTTP server with Python
+  python -m http.server 8000 --directory ./playwright-report
+  ```
 - see example procedure in `e2e.test.sh`. or simply run the file.
 
 ## Directory structure
