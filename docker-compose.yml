@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "9292:9292"
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.34.3-jammy
+    # Use docker compose up with report profile to host report.
+    # Use docker compose run to run tests.
+    command: npx playwright show-report --host 0.0.0.0
+    working_dir: /home/pwuser
+    volumes:
+      - .:/home/pwuser
+    profiles:
+      - report
+    environment:
+      - HOST=${HOST}
+    ports:
+      - "0.0.0.0:${REPORT_PORT}:9323"

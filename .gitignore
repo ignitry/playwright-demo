@@ -1,0 +1,9 @@
+#temporary PID file
+server.pid
+
+#playwright HTML report dir
+playwright-report
+test-results
+
+# Environment Variables
+.env

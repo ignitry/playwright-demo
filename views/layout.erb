@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/simple.css">
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard" class="dashboard-btn">Dashboard</a>
+        <% if session[:user] %>
+          <a href="/signout" class="signout-btn">Sign Out</a>
+        <% else %>
+          <a href="/signin">Sign In</a>
+        <% end %>
+      </nav>
+    </header>
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
